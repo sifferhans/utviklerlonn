@@ -1,0 +1,21 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "^0.6.2",
+    "@types/node": "^18",
+    "@unocss/nuxt": "^0.53.1",
+    "nuxt": "^3.5.2"
+  },
+  "dependencies": {
+    "@observablehq/plot": "^0.6.8",
+    "@unocss/reset": "^0.53.1"
+  }
+}
