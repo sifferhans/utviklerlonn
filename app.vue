@@ -2,34 +2,37 @@
 import * as Plot from "@observablehq/plot";
 import data from "~/assets/data.json";
 
-const bonus: Plot.PlotOptions = {
-  caption: "Fornøyd vs bonus",
+const fag: Plot.PlotOptions = {
+  caption: "Gjennomsnittlig lønn på tvers av fagområder",
   nice: true,
-  marginLeft: 60,
+  marginLeft: 170,
   width: 1000,
   color: {
-    legend: "ramp",
+    legend: "swatches",
   },
   marks: [
-    Plot.auto(data, {
-      y: "alder",
-      fx: "bonus",
-      fy: "fornøyd",
-      color: "erfaring",
+    Plot.boxX(data, {
+      y: "fag",
+      x: "lønn",
+      fill: "jobb",
     }),
+    Plot.frame(),
   ],
 };
 
 const median: Plot.PlotOptions = {
   caption: "Gjennomsnittlig lønn",
   nice: true,
-  marginLeft: 60,
+  marginLeft: 120,
+  color: {
+    legend: "ramp",
+    scheme: "BuRd",
+  },
   marks: [
     Plot.auto(data, {
-      mark: "bar",
-      x: "erfaring",
-      y: "alder",
-      color: "erfaring",
+      x: "lønn",
+      fy: "kolleger",
+      color: "count",
     }),
   ],
 };
@@ -43,7 +46,7 @@ const median: Plot.PlotOptions = {
 
     <pre class="fixed top-0 right-0 border border-gray-9">{{ data[0] }}</pre>
     <div class="grid gap-4 grid-cols-2">
-      <PlotFigure :options="bonus" class="col-span-2" />
+      <PlotFigure :options="fag" class="col-span-2" />
       <PlotFigure :options="median" />
     </div>
   </div>

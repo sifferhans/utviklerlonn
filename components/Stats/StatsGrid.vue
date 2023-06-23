@@ -8,9 +8,21 @@ const happy = computed(() => {
   return toPercentage(filtered, total.value) + "%";
 });
 
-const bonus = computed(() => {
-  const filtered = data.filter((d) => d.bonus === "Ja").length;
-  return toPercentage(filtered, total.value) + "%";
+const fag = computed(() => {
+  let result: Record<string, number> = {};
+
+  data
+    .map((d) => d.fag)
+    .forEach((v) => {
+      if (!result[v]) result[v] = 0;
+      result[v] += 1;
+    });
+
+  const top = Object.entries(result)
+    .map(([key, value]) => [value, key])
+    .sort(([a], [b]) => (a > b ? -1 : 1))[0][1];
+
+  return top;
 });
 </script>
 
@@ -23,7 +35,7 @@ const bonus = computed(() => {
       <StatsItem title="Er fornøyd med lønn" :value="happy" />
     </li>
     <li class="list-none">
-      <StatsItem title="Har fått bonus" :value="bonus" />
+      <StatsItem title="Vanligste fag" :value="fag" />
     </li>
   </ul>
 </template>
