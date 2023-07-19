@@ -9,13 +9,14 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@nuxt/devtools": "^0.6.2",
-    "@types/node": "^18.16.18",
-    "@unocss/nuxt": "^0.53.3",
-    "nuxt": "^3.5.3"
+    "@nuxt/devtools": "^0.6.7",
+    "@types/node": "^18.16.19",
+    "@unocss/nuxt": "^0.53.5",
+    "nuxt": "^3.6.5"
   },
   "dependencies": {
-    "@observablehq/plot": "^0.6.8",
-    "@unocss/reset": "^0.53.3"
+    "@observablehq/plot": "^0.6.9",
+    "@unocss/reset": "^0.53.5",
+    "boarding.js": "^3.5.2"
   }
 }

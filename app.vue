@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import * as Plot from "@observablehq/plot";
-import data from "~/assets/data.json";
+import data from '@/assets/data.json'
 
 const fag: Plot.PlotOptions = {
   caption: "Gjennomsnittlig lønn på tvers av fagområder",
@@ -42,9 +42,9 @@ const median: Plot.PlotOptions = {
   <div class="prose max-w-6xl w-full mx-auto">
     <h1 class="my-12">Utviklerlønn 2023</h1>
 
-    <StatsGrid />
+    <StatsGrid :data="data" />
 
-    <pre class="fixed top-0 right-0 border border-gray-9">{{ data[0] }}</pre>
+    <!-- <pre class="fixed top-0 right-0 border border-gray-9">{{ data[0] }}</pre> -->
     <div class="grid gap-4 grid-cols-2">
       <PlotFigure :options="fag" class="col-span-2" />
       <PlotFigure :options="median" />
