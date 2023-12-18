@@ -11,6 +11,4 @@ export default defineNuxtConfig({
   experimental: {
     typedPages: true,
   },
-
-  plugins: ["/c:/Users/sigha/Development/utviklerlonn/plugins/boarding.ts"],
 });
